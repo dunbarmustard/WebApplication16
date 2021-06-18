@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Supplier Retail Results";
+}
+
+@using WebApplication16.Models
+@model WebApplication16.Models.SupplierRetailResults
+
+
+
+
+<h1>@ViewData["Title"]</h1>
+
+<p>This shows all the suppliers and their retail items.</p>
+
+
+
+
+<body>
+    <h4>Suppliers and Their Retail Items</h4>
+    <hr />
+    <table cellpadding="0" cellspacing="0">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+
+        </tr>
+        @foreach (var info in Model.qResult)
+        {
+            <tr>
+                <td>@info.name</td>
+                <td>@info.email</td>
+
+            </tr>
+        }
+    </table>
+
+    <a class="btn btn-lg btn-success" asp-controller="Home" asp-action="Index">
+        <i class="fa fa-home fa-2x pull-left">GO BACK</i>
+    </a>
+</body>
+
+
+
+
+
+
+
