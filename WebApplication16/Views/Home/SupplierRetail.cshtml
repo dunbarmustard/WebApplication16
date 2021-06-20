@@ -10,33 +10,67 @@
 
 <h1>@ViewData["Title"]</h1>
 
-<p>This shows all the suppliers and their retail items.</p>
+<a class="btn btn-lg btn-success" asp-controller="Home" asp-action="Index">
+    <i class="fa fa-home fa-2x pull-left">GO BACK</i>
+</a>
+
 
 
 
 
 <body>
-    <h4>Suppliers and Their Retail Items</h4>
-    <hr />
-    <table cellpadding="0" cellspacing="0">
-        <tr>
-            <th>Name</th>
-            <th>Email</th>
 
-        </tr>
-        @foreach (var info in Model.qResult)
-        {
+
+
+
+
+    <div style="height:700px;overflow:auto; width:1500px">
+
+
+
+        <table cellpadding="0" cellspacing="0">
             <tr>
-                <td>@info.name</td>
-                <td>@info.email</td>
-
+                <th>Supplier ID</th>
+                <th>Company Name</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>License#</th>
+                <th>Phone </th>
+                <th>BookID</th>
+                <th>Book Name</th>
+                <th>ISBN </th>
+                <th>Cost </th>
+                <th>Stock Count </th>
             </tr>
-        }
-    </table>
 
-    <a class="btn btn-lg btn-success" asp-controller="Home" asp-action="Index">
-        <i class="fa fa-home fa-2x pull-left">GO BACK</i>
-    </a>
+
+
+
+
+
+            @foreach (var info in Model.qResult)
+            {
+                <tr>
+                    <td>@info.supplierid</td>
+                    <td>@info.companyname</td>
+                    <td>@info.address</td>
+                    <td>@info.city</td>
+                    <td>@info.state</td>
+                    <td>@info.licenseno</td>
+
+                    <td>@info.phone</td>
+                    <td>@info.bookid</td>
+                    <td>@info.bookname</td>
+                    <td>@info.isbn</td>
+                    <td>@info.cost</td>
+                    <td>@info.stockcount</td>
+
+                </tr>
+            }
+        </table>
+    </div>
+
 </body>
 
 

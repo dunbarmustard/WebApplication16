@@ -1,0 +1,66 @@
+﻿@{
+    ViewData["Title"] = "Most Popular Book";
+}
+
+@using WebApplication16.Models
+@model WebApplication16.Models.RetailResults
+
+
+
+
+<h1>@ViewData["Title"]</h1>
+
+<a class="btn btn-lg btn-success" asp-controller="Home" asp-action="Index">
+    <i class="fa fa-home fa-2x pull-left">GO BACK</i>
+</a>
+
+
+
+
+
+<body>
+
+
+
+
+
+    <div style="height:700px;overflow:auto; width:1500px">
+
+
+
+        <table cellpadding="0" cellspacing="0">
+            <tr>
+                <th>Book ID</th>
+                <th>Book Name</th>
+                <th>Cost</th>
+                <th>ISBN</th>
+              
+            </tr>
+
+
+
+
+
+
+            @foreach (var info in Model.qResult)
+            {
+                <tr>
+                    <td>@info.bookid</td>
+                    <td>@info.bookname</td>
+                    <td>@info.cost</td>
+                    <td>@info.isbn</td>
+                   
+
+                </tr>
+            }
+        </table>
+    </div>
+
+</body>
+
+
+
+
+
+
+
